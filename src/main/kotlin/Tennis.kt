@@ -27,12 +27,14 @@ class Tennis {
             return lookupScore()
         }
 
-        if (abs(firstPlayerScoreTimes - secondPlayerScoreTimes) == 1) {
+        if (isAdv()) {
             return "${advPlayer()} adv"
         }
 
         return "${advPlayer()} win"
     }
+
+    private fun isAdv() = abs(firstPlayerScoreTimes - secondPlayerScoreTimes) == 1
 
     private fun advPlayer(): String = if (firstPlayerScoreTimes > secondPlayerScoreTimes) {
         firstPlayerName

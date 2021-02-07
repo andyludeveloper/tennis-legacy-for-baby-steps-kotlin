@@ -24,18 +24,27 @@ class Tennis {
         if (isLookupScore()) {
             return lookupScore()
         }
+
         if (firstPlayerScoreTimes == 4 && secondPlayerScoreTimes == 3) {
-            return "$firstPlayerName adv"
+            return "${advPlayer()} adv"
         }
         if (firstPlayerScoreTimes == 3 && secondPlayerScoreTimes == 4) {
-            return "$secondPlayerName adv"
+            return "${advPlayer()} adv"
         }
         if (firstPlayerScoreTimes == 5 && secondPlayerScoreTimes == 3) {
-            return "$firstPlayerName win"
+            return "${advPlayer()} win"
         }
         return if (firstPlayerScoreTimes == 3 && secondPlayerScoreTimes == 5) {
-            "$secondPlayerName win"
+            "${advPlayer()} win"
         } else null
+    }
+
+    private fun advPlayer(): String {
+        val advPlayer = if (firstPlayerScoreTimes > secondPlayerScoreTimes) {
+            firstPlayerName
+        } else
+            secondPlayerName
+        return advPlayer
     }
 
     private fun isLookupScore() = firstPlayerScoreTimes < 4 && secondPlayerScoreTimes < 4

@@ -17,16 +17,11 @@ class Tennis {
 
     fun score(): String {
         val deuce = "deuce"
-        if (isSameScore()) {
-            if (isDeuce()) {
-                return deuce
-            }
-            return sameScore()
+        return when {
+            isSameScore() -> if (isDeuce()) deuce else sameScore()
+            isLookupScore() -> lookupScore()
+            else -> advState()
         }
-        if (isLookupScore()) {
-            return lookupScore()
-        }
-        return advState()
     }
 
     private fun advState() = "${advPlayer()} ${if (isAdv()) "adv" else "win"}"

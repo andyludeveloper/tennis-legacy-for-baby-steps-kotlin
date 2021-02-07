@@ -1,52 +1,61 @@
-class Tennis {
+class Tennis{
     private var secondPlayerScoreTimes = 0
     private var firstPlayerScoreTimes = 0
 
+    private val firstPlayerName = "Joey"
+
+    private val secondPlayerName = "Tom"
+
     fun score(): String? {
+        val love = "love"
+        val fifteen = "fifteen"
+        val thirty = "thirty"
+        val forty = "forty"
+        val deuce = "deuce"
         if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes == 0) {
-            return "love all"
+            return "$love all"
         }
         if (firstPlayerScoreTimes == 1 && secondPlayerScoreTimes == 0) {
-            return "fifteen love"
+            return "$fifteen $love"
         }
         if (firstPlayerScoreTimes == 2 && secondPlayerScoreTimes == 0) {
-            return "thirty love"
+            return "$thirty $love"
         }
         if (firstPlayerScoreTimes == 3 && secondPlayerScoreTimes == 0) {
-            return "forty love"
+            return "$forty $love"
         }
         if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes == 1) {
-            return "love fifteen"
+            return "$love $fifteen"
         }
         if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes == 2) {
-            return "love thirty"
+            return "$love $thirty"
         }
         if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes == 3) {
-            return "love forty"
+            return "$love $forty"
         }
         if (firstPlayerScoreTimes == 1 && secondPlayerScoreTimes == 1) {
-            return "fifteen all"
+            return "$fifteen all"
         }
         if (firstPlayerScoreTimes == 2 && secondPlayerScoreTimes == 2) {
-            return "thirty all"
+            return "$thirty all"
         }
         if (firstPlayerScoreTimes == 3 && secondPlayerScoreTimes == 3) {
-            return "deuce"
+            return deuce
         }
         if (firstPlayerScoreTimes == 4 && secondPlayerScoreTimes == 4) {
-            return "deuce"
+            return deuce
         }
         if (firstPlayerScoreTimes == 4 && secondPlayerScoreTimes == 3) {
-            return "Joey adv"
+            return "$firstPlayerName adv"
         }
         if (firstPlayerScoreTimes == 3 && secondPlayerScoreTimes == 4) {
-            return "Tom adv"
+            return "$secondPlayerName adv"
         }
         if (firstPlayerScoreTimes == 5 && secondPlayerScoreTimes == 3) {
-            return "Joey win"
+            return "$firstPlayerName win"
         }
         return if (firstPlayerScoreTimes == 3 && secondPlayerScoreTimes == 5) {
-            "Tom win"
+            "$secondPlayerName win"
         } else null
     }
 

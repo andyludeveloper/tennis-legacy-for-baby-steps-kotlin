@@ -15,7 +15,7 @@ class Tennis {
         3 to "forty"
     )
 
-    fun score(): String? {
+    fun score(): String {
         val deuce = "deuce"
         if (isSameScore()) {
             if (isDeuce()) {
@@ -31,11 +31,7 @@ class Tennis {
             return "${advPlayer()} adv"
         }
 
-        if (abs(firstPlayerScoreTimes - secondPlayerScoreTimes) == 2) {
-            return "${advPlayer()} win"
-        }
-
-        return null
+        return "${advPlayer()} win"
     }
 
     private fun advPlayer(): String {

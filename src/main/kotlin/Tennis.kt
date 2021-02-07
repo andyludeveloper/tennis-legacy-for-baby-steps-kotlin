@@ -1,4 +1,4 @@
-class Tennis{
+class Tennis {
     private var secondPlayerScoreTimes = 0
     private var firstPlayerScoreTimes = 0
 
@@ -18,22 +18,10 @@ class Tennis{
         if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes == 0) {
             return "${scoreMap[firstPlayerScoreTimes]} all"
         }
-        if (firstPlayerScoreTimes == 1 && secondPlayerScoreTimes == 0) {
+        if (firstPlayerScoreTimes < 4 && secondPlayerScoreTimes == 0) {
             return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
         }
-        if (firstPlayerScoreTimes == 2 && secondPlayerScoreTimes == 0) {
-            return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
-        }
-        if (firstPlayerScoreTimes == 3 && secondPlayerScoreTimes == 0) {
-            return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
-        }
-        if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes == 1) {
-            return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
-        }
-        if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes == 2) {
-            return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
-        }
-        if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes == 3) {
+        if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes < 4) {
             return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
         }
         if (firstPlayerScoreTimes == 1 && secondPlayerScoreTimes == 1) {

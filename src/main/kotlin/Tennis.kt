@@ -34,13 +34,10 @@ class Tennis {
         return "${advPlayer()} win"
     }
 
-    private fun advPlayer(): String {
-        val advPlayer = if (firstPlayerScoreTimes > secondPlayerScoreTimes) {
-            firstPlayerName
-        } else
-            secondPlayerName
-        return advPlayer
-    }
+    private fun advPlayer(): String = if (firstPlayerScoreTimes > secondPlayerScoreTimes) {
+        firstPlayerName
+    } else
+        secondPlayerName
 
     private fun isLookupScore() = firstPlayerScoreTimes < 4 && secondPlayerScoreTimes < 4
 

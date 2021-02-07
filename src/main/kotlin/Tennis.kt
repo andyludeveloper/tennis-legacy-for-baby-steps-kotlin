@@ -6,38 +6,41 @@ class Tennis{
 
     private val secondPlayerName = "Tom"
 
+    private val scoreMap: Map<Int, String> = mapOf(
+        0 to "love",
+        1 to "fifteen",
+        2 to "thirty",
+        3 to "forty"
+    )
+
     fun score(): String? {
-        val love = "love"
-        val fifteen = "fifteen"
-        val thirty = "thirty"
-        val forty = "forty"
         val deuce = "deuce"
         if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes == 0) {
-            return "$love all"
+            return "${scoreMap[firstPlayerScoreTimes]} all"
         }
         if (firstPlayerScoreTimes == 1 && secondPlayerScoreTimes == 0) {
-            return "$fifteen $love"
+            return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
         }
         if (firstPlayerScoreTimes == 2 && secondPlayerScoreTimes == 0) {
-            return "$thirty $love"
+            return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
         }
         if (firstPlayerScoreTimes == 3 && secondPlayerScoreTimes == 0) {
-            return "$forty $love"
+            return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
         }
         if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes == 1) {
-            return "$love $fifteen"
+            return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
         }
         if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes == 2) {
-            return "$love $thirty"
+            return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
         }
         if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes == 3) {
-            return "$love $forty"
+            return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
         }
         if (firstPlayerScoreTimes == 1 && secondPlayerScoreTimes == 1) {
-            return "$fifteen all"
+            return "${scoreMap[firstPlayerScoreTimes]} all"
         }
         if (firstPlayerScoreTimes == 2 && secondPlayerScoreTimes == 2) {
-            return "$thirty all"
+            return "${scoreMap[firstPlayerScoreTimes]} all"
         }
         if (firstPlayerScoreTimes == 3 && secondPlayerScoreTimes == 3) {
             return deuce

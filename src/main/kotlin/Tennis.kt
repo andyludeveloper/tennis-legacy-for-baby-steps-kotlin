@@ -26,12 +26,7 @@ class Tennis {
         if (isLookupScore()) {
             return lookupScore()
         }
-
-        if (isAdv()) {
-            return "${advPlayer()} adv"
-        }
-
-        return "${advPlayer()} win"
+        return "${advPlayer()} ${if (isAdv()) "adv" else "win"}"
     }
 
     private fun isAdv() = abs(firstPlayerScoreTimes - secondPlayerScoreTimes) == 1

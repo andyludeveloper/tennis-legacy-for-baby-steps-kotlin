@@ -14,9 +14,9 @@ class Tennis {
         2 to "thirty",
         3 to "forty"
     )
+    private val deuce = "deuce"
 
     fun score(): String {
-        val deuce = "deuce"
         return when {
             isSameScore() -> if (isDeuce()) deuce else sameScore()
             isLookupScore() -> lookupScore()

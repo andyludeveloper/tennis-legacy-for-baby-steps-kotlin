@@ -1,3 +1,5 @@
+import kotlin.math.abs
+
 class Tennis {
     private var secondPlayerScoreTimes = 0
     private var firstPlayerScoreTimes = 0
@@ -25,18 +27,15 @@ class Tennis {
             return lookupScore()
         }
 
-        if (firstPlayerScoreTimes == 4 && secondPlayerScoreTimes == 3) {
+        if (abs(firstPlayerScoreTimes - secondPlayerScoreTimes) == 1) {
             return "${advPlayer()} adv"
         }
-        if (firstPlayerScoreTimes == 3 && secondPlayerScoreTimes == 4) {
-            return "${advPlayer()} adv"
-        }
-        if (firstPlayerScoreTimes == 5 && secondPlayerScoreTimes == 3) {
+
+        if (abs(firstPlayerScoreTimes - secondPlayerScoreTimes) == 2) {
             return "${advPlayer()} win"
         }
-        return if (firstPlayerScoreTimes == 3 && secondPlayerScoreTimes == 5) {
-            "${advPlayer()} win"
-        } else null
+
+        return null
     }
 
     private fun advPlayer(): String {

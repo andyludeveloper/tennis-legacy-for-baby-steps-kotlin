@@ -21,10 +21,7 @@ class Tennis {
             }
             return "${scoreMap[firstPlayerScoreTimes]} all"
         }
-        if (firstPlayerScoreTimes < 4 && secondPlayerScoreTimes == 0) {
-            return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
-        }
-        if (firstPlayerScoreTimes == 0 && secondPlayerScoreTimes < 4) {
+        if (firstPlayerScoreTimes < 4 && secondPlayerScoreTimes < 4) {
             return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
         }
         if (firstPlayerScoreTimes == 4 && secondPlayerScoreTimes == 3) {

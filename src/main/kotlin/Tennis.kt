@@ -15,14 +15,14 @@ class Tennis {
 
     fun score(): String? {
         val deuce = "deuce"
-        if (firstPlayerScoreTimes == secondPlayerScoreTimes) {
-            if (firstPlayerScoreTimes >= 3) {
+        if (isSameScore()) {
+            if (isDeuce()) {
                 return deuce
             }
-            return "${scoreMap[firstPlayerScoreTimes]} all"
+            return sameScore()
         }
-        if (firstPlayerScoreTimes < 4 && secondPlayerScoreTimes < 4) {
-            return "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
+        if (isLookupScore()) {
+            return lookupScore()
         }
         if (firstPlayerScoreTimes == 4 && secondPlayerScoreTimes == 3) {
             return "$firstPlayerName adv"
@@ -37,6 +37,16 @@ class Tennis {
             "$secondPlayerName win"
         } else null
     }
+
+    private fun isLookupScore() = firstPlayerScoreTimes < 4 && secondPlayerScoreTimes < 4
+
+    private fun isSameScore() = firstPlayerScoreTimes == secondPlayerScoreTimes
+
+    private fun isDeuce() = firstPlayerScoreTimes >= 3
+
+    private fun sameScore() = "${scoreMap[firstPlayerScoreTimes]} all"
+
+    private fun lookupScore() = "${scoreMap[firstPlayerScoreTimes]} ${scoreMap[secondPlayerScoreTimes]}"
 
     fun firstPlayerScore() {
         firstPlayerScoreTimes++
